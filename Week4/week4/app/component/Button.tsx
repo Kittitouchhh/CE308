@@ -1,9 +1,9 @@
-import { Text, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity } from "react-native";
 
 type CustomButtonProps = {
   title: string;
   onPress: () => void;
-  variant?: "blue" | "gray" | "red"; 
+  variant?: "blue" | "gray" | "red";
   size?: "sm" | "md" | "lg"; 
 };
 
@@ -13,6 +13,7 @@ export const CustomButton = ({
   variant = "blue",
   size = "md",
 }: CustomButtonProps) => {
+  
   const variantClasses = {
     blue: "bg-blue-500 active:bg-blue-700",
     gray: "bg-gray-500 active:bg-gray-700",
@@ -30,8 +31,9 @@ export const CustomButton = ({
       className={[
         variantClasses[variant],
         sizeClasses[size],
-        "rounded-lg active:bg-opacity-70"
-      ].join(' ')}
+        "rounded-lg active:bg-opacity-70",
+      ].join(" ")}
+      onPress={onPress}
     >
       <Text className="text-white font-semibold">{title}</Text>
     </TouchableOpacity>

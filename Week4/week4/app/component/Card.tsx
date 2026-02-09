@@ -2,7 +2,8 @@ import { View, Text, FlatList } from "react-native";
 import { CustomButton } from "./Button";
 
 type cardProps = {
-    itemsCard: { id: string; name: string; price: number ;amount: number; btnSize: string; btnColor: string;}[];
+    itemsCard: { id: string; name: string; price: number ;
+        amount: number; btnSize: string; btnColor: string;}[];
 };
 
 export const Card = ({ itemsCard }: cardProps) => {
@@ -15,10 +16,11 @@ export const Card = ({ itemsCard }: cardProps) => {
                     <Text className="text-xl font-bold">ชื่อสินค้า : {item.name}</Text>
                     <Text className="text-sm ">ราคา : {item.price}</Text>
                     <Text className="text-sm ">จำนวน : {item.amount}</Text>
-                    <Custombutton
+                    <CustomButton
                         title="สั่งซื้อ"
-                        btnColor={item.btnColor as "blue" | "red" | "gray"}
-                        btnSize={item.btnSize as "sm"|"md"|"lg"}
+                        variant={item.btnColor as "blue" | "red" | "gray"}
+                        size={item.btnSize as "sm"|"md"|"lg"}
+                        onPress={() => console.log("โอเคคคคคคคค")}
                     />
                 </View>
             )}
